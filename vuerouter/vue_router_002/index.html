@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue router 002</title>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <router-link to="/user/azhang">用户</router-link>
+        </div>
+        <div>
+            <router-view></router-view>
+        </div>
+    </div>
+
+    <template id="user">
+        <div>
+            <!-- route.params.user routes中路径匹配的url中的参数user-->
+            <!-- route.query.age url中传入的querystring的参数age=3 -->
+            我是{{$route.params.name}}, 今年{{$route.query.age}}岁了。
+        </div>
+    </template>
+
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.js"></script>
+    <script src="https://cdn.bootcss.com/vue-router/3.0.1/vue-router.js"></script>
+    <script src="./vue_route.js"></script>
+</body>
+</html>
